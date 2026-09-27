@@ -1,0 +1,21 @@
+================ SIMPLE PAIRWISE MERGING ================
+Lists:
+ L1 = 10 30 50 70
+ L2 = 20 40 60 80
+ L3 = 15 35 55 75
+
+Step 1: merge(L1, L2) -> M12
+Result M12            : 10 20 30 40 50 60 70 80 
+Comparisons used in Step 1 : 7
+
+Step 2: merge(M12, L3) -> FINAL
+Result FINAL          : 10 15 20 30 35 40 50 55 60 70 75 80 
+Comparisons used in Step 2 : 11
+
+--- Result ---
+Merged output         : 10 15 20 30 35 40 50 55 60 70 75 80 
+
+Total elements merged (N)        : 12
+Number of merge stages (k-1)     : 2
+Max auxiliary array size used    : 8
+Total value comparisons (pairwise): 18

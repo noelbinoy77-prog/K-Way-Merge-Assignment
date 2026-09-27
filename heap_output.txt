@@ -1,0 +1,67 @@
+================ K-WAY MERGE USING MIN HEAP ================
+Lists:
+ L1 = 10 30 50 70
+ L2 = 20 40 60 80
+ L3 = 15 35 55 75
+Heap capacity (k) = 3  (one slot per list)
+
+Initial heap (unheapified)   : [10(L1), 20(L2), 15(L3)]
+After buildHeap()            : [10(L1), 20(L2), 15(L3)]
+
+--- Extraction phase ---
+
+Step  1: Extract MIN = 10 (from L1)
+  Insert next element of L1 -> 30, then sift-down
+  Heap state now             : [15(L3), 20(L2), 30(L1)]
+
+Step  2: Extract MIN = 15 (from L3)
+  Insert next element of L3 -> 35, then sift-down
+  Heap state now             : [20(L2), 35(L3), 30(L1)]
+
+Step  3: Extract MIN = 20 (from L2)
+  Insert next element of L2 -> 40, then sift-down
+  Heap state now             : [30(L1), 35(L3), 40(L2)]
+
+Step  4: Extract MIN = 30 (from L1)
+  Insert next element of L1 -> 50, then sift-down
+  Heap state now             : [35(L3), 50(L1), 40(L2)]
+
+Step  5: Extract MIN = 35 (from L3)
+  Insert next element of L3 -> 55, then sift-down
+  Heap state now             : [40(L2), 50(L1), 55(L3)]
+
+Step  6: Extract MIN = 40 (from L2)
+  Insert next element of L2 -> 60, then sift-down
+  Heap state now             : [50(L1), 60(L2), 55(L3)]
+
+Step  7: Extract MIN = 50 (from L1)
+  Insert next element of L1 -> 70, then sift-down
+  Heap state now             : [55(L3), 60(L2), 70(L1)]
+
+Step  8: Extract MIN = 55 (from L3)
+  Insert next element of L3 -> 75, then sift-down
+  Heap state now             : [60(L2), 75(L3), 70(L1)]
+
+Step  9: Extract MIN = 60 (from L2)
+  Insert next element of L2 -> 80, then sift-down
+  Heap state now             : [70(L1), 75(L3), 80(L2)]
+
+Step 10: Extract MIN = 70 (from L1)
+  L1 exhausted -> move last heap node to root, sift-down
+  Heap state now             : [75(L3), 80(L2)]
+
+Step 11: Extract MIN = 75 (from L3)
+  L3 exhausted -> move last heap node to root, sift-down
+  Heap state now             : [80(L2)]
+
+Step 12: Extract MIN = 80 (from L2)
+  L2 exhausted -> move last heap node to root, sift-down
+  Heap state now             : []
+
+--- Result ---
+Merged output: 10 15 20 30 35 40 50 55 60 70 75 80 
+
+Total elements merged (N)      : 12
+Number of lists (k)             : 3
+Max heap size used               : 3
+Total value comparisons (heap)   : 21
